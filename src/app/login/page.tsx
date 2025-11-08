@@ -1,4 +1,5 @@
 "use client";
+import {User} from "lucide-react";
 
 //importar dependências
 import { useState } from "react";
@@ -35,34 +36,39 @@ export default function LoginPage() {
 
     return (
         <div className="min-h-screen flex items-center justify-center"> 
-            <div className="container-left">
+            <style>
+                @import url('https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap');
+            </style>
+            <div className="login-container flex w-full h-screen">
+                <div className="container-left">
                 {/* este lado é para a imagem de bg */}
-            </div>
+                </div>
 
-            <div className="container-right flex flex-col items-center justify-center p-8">
-                {/* este lado é para o formulário de login */}
-                <form onSubmit={handleLogin} className="login-form">
-                    <h2 className="form-title">Login</h2>
-                    <input
-                        type="email"
-                        placeholder="Email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        required
-                        className="input-field"
-                    />
-                    <input
-                        type="password"
-                        placeholder="Senha"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                        required
-                        className="input-field"
-                    />
-                    <button type="submit" disabled={loading} className="submit-button">
-                        {loading ? "Entrando..." : "Entrar"}
-                    </button>
-                </form>
+                <div className="container-right flex flex-col items-center justify-center p-8">
+                    {/* este lado é para o formulário de login */}
+                    <form onSubmit={handleLogin} className="login-form">
+                        <h2 className="form-title">Login</h2>
+                        <input
+                            type="email"
+                            placeholder="Email"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            required
+                            className="input-field"
+                            />
+                        <input
+                            type="password"
+                            placeholder="Senha"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                            required
+                            className="input-field"
+                            />
+                            <button type="submit" disabled={loading} className="submit-button">
+                            {loading ? "Entrando..." : "Entrar"}
+                            </button>
+                    </form>
+                </div>
             </div>
         </div>
     );
